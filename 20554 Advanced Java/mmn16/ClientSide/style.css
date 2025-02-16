@@ -1,0 +1,170 @@
+.root {
+    -fx-message-primary:#d9fdd3;
+    -fx-message-defualt:#ffffff;
+    -fx-message-server: rgba(255, 255, 255, 0.92);
+    -fx-send-button-color: #8ad37c;
+    -fx-send-button-icon-color:#858585;
+    -fx-border-accent:#838998;
+
+}
+
+.button {
+    -fx-base:white;
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+}
+
+.button:hover{
+    -fx-background-color: derive(-fx-base , -5%);
+}
+
+.send-button{
+    -fx-text-fill: -fx-send-button-icon-color;
+    -fx-background-radius: 0px 10px 10px 0px;
+}
+
+.send-button:hover{
+    -fx-background-color: -fx-send-button-color;
+    -fx-text-fill: white;
+}
+
+.tool-bar{
+    -fx-background-insets: 0;
+    -fx-spacing: 0.5;
+}
+
+.user-label{
+    -fx-background-radius: 10px;
+    -fx-padding: 10 15 10 15;
+    -fx-background-color: -fx-message-defualt;
+    -fx-wrap-text: TRUE;
+    -fx-color-blur:derive(-fx-base, -30%);
+    -fx-effect: dropshadow(gaussian, -fx-color-blur,2,0,0,1);
+    -fx-font-size: 16px;
+}
+
+.this-user-label{
+    -fx-background-color: -fx-message-primary;
+}
+
+.server-label{
+    -fx-padding: 5 10 5 10;
+    -fx-background-color: -fx-message-server;
+    -fx-font-size: 12px;
+    -fx-max-width: 200px;
+}
+
+.list-view {
+    -fx-padding: 20;
+    -fx-background-image: url(background-beige.png);
+    -fx-border-color: derive(-fx-border-accent, 80%);
+    -fx-border-width: 0.5 0 0.5 0;
+}
+
+.list-view .cell{
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 15 0;
+}
+
+.list-view .scroll-bar:horizontal{
+    -fx-scale-x: 0;
+}
+
+.scroll-pane,
+.scroll-pane .viewport{
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.text-area{
+    -fx-background-color: white;
+    -fx-background-radius: 10px 0px 0px 10px;
+    -fx-focus-color:transparent;
+    -fx-faint-focus-color:transparent;
+}
+
+.text-area .viewport{
+    -fx-border-width: 0;
+    -fx-background-radius: 10px 0px 0px 10px;
+    -fx-background-color: white;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+    -fx-padding: 7 5 13 20;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 8px;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track{
+    -fx-padding: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: rgba(0, 0, 0, 0.13);
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.scroll-bar:vertical .track-background{
+    -fx-background-radius: none;
+    -fx-min-width: 10px;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .decrement-button{
+    -fx-padding: -2;
+    -fx-base: transparent;
+}
+
+.scroll-bar:vertical .increment-button{
+    -fx-padding: -2;
+    -fx-base: transparent;
+}
+
+.menu-button{
+    -fx-background-color: transparent;
+}
+
+.menu-button .context-menu {
+    -fx-background-color: white;
+    -fx-padding: 5 0 5 0;
+    -fx-spacing: 0;
+    -fx-translate-x: -50px;
+    -fx-translate-y: 5px;
+}
+
+.menu-button .label,
+.menu-button .arrow-button .arrow{
+    -fx-padding: 0;
+}
+
+.menu-button .menu-item{
+    -fx-padding: 10 15 10 15;
+}
+
+.menu-button .menu-item:focused,
+.menu-button .menu-item:focused .label{
+    -fx-background-color: derive(white, -5%);
+    -fx-text-fill: black;
+}
+
+.chat-legend {
+    -fx-border-color: -fx-border-accent;
+    -fx-border-width: 0 0.5 0 0;
+}
+
+
+

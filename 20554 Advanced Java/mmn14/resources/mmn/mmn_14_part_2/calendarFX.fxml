@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="778.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mmn.mmn_14_part_2.Controller">
+   <children>
+      <VBox minHeight="760.0" minWidth="715.0" prefHeight="778.0" prefWidth="715.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox onMouseEntered="#monthHoverEntered" onMouseExited="#monthHoverExist">
+               <VBox.margin>
+                  <Insets left="30.0" right="20.0" />
+               </VBox.margin>
+               <children>
+                  <ToolBar style="-fx-background-color: transparent;">
+                     <items>
+                        <Button fx:id="decreaseYear" mnemonicParsing="false" onAction="#increaseYear" prefWidth="20.0" style="-fx-background-color: transparent;" text="◀">
+                           <font>
+                              <Font name="Bluefish Demo Bold" size="32.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                           </padding>
+                        </Button>
+                        <Label fx:id="yearLabel" text="2024">
+                           <font>
+                              <Font name="Segoe UI" size="34.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="increaseYear" mnemonicParsing="false" onAction="#increaseYear" prefWidth="20.0" style="-fx-background-color: transparent;" text="▶">
+                           <font>
+                              <Font name="Segoe UI Bold" size="32.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                           </padding>
+                        </Button>
+                        <MenuButton fx:id="monthPicker" graphicTextGap="0.0" mnemonicParsing="false" onAction="#onMonthPicked" style="-fx-background-color: transparent;" text="December">
+                           <font>
+                              <Font name="Segoe UI" size="34.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </MenuButton>
+                     </items>
+                  </ToolBar>
+                  <HBox fx:id="expandedPane" alignment="CENTER_LEFT" spacing="5.0" />
+               </children>
+            </VBox>
+            <GridPane fx:id="calenderGrid" alignment="CENTER" hgap="3.0" prefHeight="650.0" prefWidth="718.0" vgap="3.0" VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="F" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="T" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="W" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="T" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="M" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="S">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="200.0" prefWidth="200.0" text="S" GridPane.columnIndex="6">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="buttonToggle" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDateClicked" onMouseEntered="#dateHoverEntered" onMouseExited="#dateHoverExist" style="-fx-background-radius: 150; -fx-background-color: transparent" text="1" toggleGroup="$buttonToggle" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI" size="30.0" />
+                     </font>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <VBox minWidth="300.0" prefHeight="778.0" prefWidth="361.0" style="-fx-background-color: #DFE0E1FF;">
+         <children>
+            <DatePicker fx:id="datePicker" minHeight="-Infinity" onAction="#onDatePicked" prefHeight="41.0" prefWidth="185.0" style="-fx-font-size: 18px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
+               <tooltip>
+                  <Tooltip text="View date" />
+               </tooltip>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Label text="At a glance" textFill="#0a80da" textOverrun="LEADING_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Segoe UI Semibold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" right="20.0" top="45.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="glance" editable="false" prefHeight="518.0" prefWidth="271.0" style="-fx-background-color: transparent; -fx-base: transparent; -fx-text-fill-color: black;" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="Segoe UI Semilight" size="21.0" />
+               </font>
+               <padding>
+                  <Insets left="-15.0" right="-10.0" />
+               </padding>
+            </TextArea>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="50.0" right="40.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>
